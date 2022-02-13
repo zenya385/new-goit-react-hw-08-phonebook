@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const ContactList = ({ users, removeUser }) => {
   return (
     <>
       <ul>
-        {users.map((user) => (
+        {users.map(user => (
           <li key={user.id}>
             <span>{user.name}: </span>
             {user.number}

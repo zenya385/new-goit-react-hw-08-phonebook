@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import s from "./Filter.module.css";
+import PropTypes from 'prop-types';
+import s from './Filter.module.css';
 
 const Filter = ({ filter, setFilter }) => {
   return (
@@ -22,4 +22,5 @@ Filter.propTypes = {
   filter: PropTypes.string,
   setFilter: PropTypes.func.isRequired,
 };
+
 export default Filter;
