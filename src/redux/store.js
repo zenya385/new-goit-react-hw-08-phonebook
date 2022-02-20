@@ -33,21 +33,7 @@ export const store = configureStore({
     contacts: persistReducer(contactsPersistConfig, combineReducers),
   },
   middleware,
-  devTools: process.env.NODE_ENV === 'development',
+  devTools: process.env.NODE_ENV !== 'development',
 });
 
 export const persistor = persistStore(store);
-
-// // import configureStore from 'reduserjs/toolkit';
-
-// import { createStore, combineReducers } from 'redux';
-// import { devToolsEnhancer } from '@redux-devtools/extension';
-// import contactsReduser from './contacts/contactsReduser';
-
-// const rootReduser = combineReducers({
-//   contacts: contactsReduser,
-// });
-
-// const store = createStore(rootReduser, devToolsEnhancer());
-
-// export default store;
