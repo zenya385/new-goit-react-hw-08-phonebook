@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeContact } from 'redux/contacts/contactsAction';
 
@@ -32,14 +31,5 @@ const ContactList = () => {
     </>
   );
 };
-
-// ContactList.propTypes = {
-//   users: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//     })
-//   ),
-//   removeUser: PropTypes.func.isRequired,
-// };
 
 export default ContactList;
