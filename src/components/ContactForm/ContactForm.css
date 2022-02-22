@@ -11,11 +11,12 @@
   margin-left: 5px;
   height: 25px;
   border-radius: 5px;
-  outline: none;
-  border: none;
+  /* outline: none;
+  border: none; */
 }
 
 .name {
+  padding: 1px 2px;
   composes: number;
   margin-bottom: 15px;
 }

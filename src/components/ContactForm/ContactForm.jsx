@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { addContact } from '../../redux/contacts/contactsAction';
+import { addContact } from '../../redux/contacts/contactsOperations';
 import s from './ContactForm.css';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function ContactForm() {
-  const contacts = useSelector(state => state.contacts.itemsReducer);
+  const contacts = useSelector(state => state.contacts.items);
 
   const dispatch = useDispatch();
 

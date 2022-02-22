@@ -1,28 +1,38 @@
-import { addContact, removeContact, filterContacts } from './contactsAction';
+import { addContact, getContacts, removeContact } from './contactsOperations';
+import { filterContacts } from './contactsAction';
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
 
-const test = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-];
-
-const itemsReducer = createReducer(test, {
-  [addContact]: (state, action) => [...state, action.payload],
-  [removeContact]: (state, action) =>
-    state.filter(({ id }) => id !== action.payload),
+const itemsReducer = createReducer([], {
+  [addContact.fulfilled]: (state, { payload }) => {
+    const addContact = [...state, payload];
+    return addContact;
+  },
+  [getContacts.fulfilled]: (_, { payload }) => payload,
+  [removeContact.fulfilled]: (state, { payload }) => {
+    const removeContact = state.filter(({ id }) => id !== payload);
+    return removeContact;
+  },
 });
 
 const filterReducer = createReducer('', {
-  [filterContacts]: (_, action) => action.payload,
+  [filterContacts]: (_, { payload }) => payload,
 });
 
-// const contactsReducer = combineReducers({
-//   items: itemsReducer,
-//   filter: filterReducer,
+// const loaderReducer = createReducer(false, {
+//   [addContact.pending]: () => true,
+//   [addContact.fulfilled]: () => false,
+//   [addContact.rejected]: () => false,
+//   [getContacts.pending]: () => true,
+//   [getContacts.fulfilled]: () => false,
+//   [getContacts.rejected]: () => false,
+//   [removeContact.pending]: () => true,
+//   [removeContact.fulfilled]: () => false,
+//   [removeContact.rejected]: () => false,
 // });
 
 // export default contactsReducer;
-
-export default combineReducers({ itemsReducer, filterReducer });
+export default combineReducers({
+  items: itemsReducer,
+  filter: filterReducer,
+  // loader: loaderReducer,
+});
