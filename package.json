@@ -1,4 +1,5 @@
 {
+  "homepage": "https://zenya385.github.io/new-goit-react-hw-08-phonebook/",
   "name": "new-goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
@@ -35,7 +36,7 @@
     "eject": "react-scripts eject",
     "lint:js": "eslint src/**/*.{js,jsx}",
     "predeploy": "npm run build",
-    "deploy": "netlify deploy -p"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
