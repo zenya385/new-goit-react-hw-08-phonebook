@@ -1,6 +1,6 @@
 import React from 'react';
 import Contacts from '../components/contacts/Contacts';
-import Filter from '../components/Filter/Filter.js';
+import Filter from '../components/filter/Filter.js';
 import DataInput from '../components/dataInput/DataInput';
 import Section from '../components/section/Section';
 
