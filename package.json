@@ -1,6 +1,6 @@
 {
-  "homepage": "https://zenya385.github.io/new-goit-react-hw-08-phonebook/",
-  "name": "new-goit-react-hw-08-phonebook",
+  "homepage": "https://zenya385.github.io/phonebook-app-react/",
+  "name": "phonebook-app-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
