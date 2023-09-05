@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authActions from './auth-actions';
 
-const baseURL = 'https://goit-task-manager.herokuapp.com';
+const baseURL = 'https://connections-api.herokuapp.com/';
 
 const token = {
     set(token) {
